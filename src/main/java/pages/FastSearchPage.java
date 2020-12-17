@@ -85,10 +85,11 @@ public class FastSearchPage {
     public void selectAdvancedSearch() throws IOException {
         fastSearchLocators.getAdvanced().click();
 
+        wait.until(ExpectedConditions.elementToBeClickable(fastSearchLocators.getEquipment()));
+
         File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(file, new File("C:\\testPhoto\\screen.jpeg"));
 
-        wait.until(ExpectedConditions.elementToBeClickable(fastSearchLocators.getEquipment()));
         fastSearchLocators.getEquipment().click();
 
         wait.until(ExpectedConditions.elementToBeClickable(fastSearchLocators.getCheck()));
@@ -101,16 +102,14 @@ public class FastSearchPage {
         File file2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(file2, new File("C:\\testPhoto\\screen2.jpeg"));
 
-
-
-        File file3 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(file3, new File("C:\\testPhoto\\screen2.jpeg"));
-
         for (Cookie cookie : driver.manage().getCookies()) {
             System.out.println("\n" + cookie.getName() + " : " + cookie.getValue());
         }
 
+        fastSearchLocators.getWybierz().click();
 
+        File file3 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(file3, new File("C:\\testPhoto\\screen3.jpeg"));
     }
 
 
