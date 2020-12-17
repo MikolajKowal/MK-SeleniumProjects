@@ -101,7 +101,7 @@ public class FastSearchPage {
         File file2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(file2, new File("C:\\testPhoto\\screen2.jpeg"));
 
-        fastSearchLocators.getWybierz().click();
+
 
         File file3 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(file3, new File("C:\\testPhoto\\screen2.jpeg"));
@@ -109,6 +109,8 @@ public class FastSearchPage {
         for (Cookie cookie : driver.manage().getCookies()) {
             System.out.println("\n" + cookie.getName() + " : " + cookie.getValue());
         }
+
+
     }
 
 
