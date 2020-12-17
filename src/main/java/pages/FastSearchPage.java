@@ -111,6 +111,4 @@ public class FastSearchPage {
         File file3 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(file3, new File("C:\\testPhoto\\screen3.jpeg"));
     }
-
-
 }
